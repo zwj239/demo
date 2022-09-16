@@ -39,13 +39,7 @@ spring:
     compatibility-verifier:
       compatible-boot-versions:
       enabled: false
-#    sentinel:
-#      transport:
-#        dashboard: localhost:8080
+
   application:
     name: jpa
-#management:
-#  endpoints:
-#    web:
-#      exposure:
-#        include: '*'
+

@@ -1,0 +1,51 @@
+server:
+  port: 8010
+spring:
+  main:
+    banner-mode: 'off'
+    allow-bean-definition-overriding: true
+  data:
+    jpa:
+      repositories:
+        bootstrap-mode: deferred
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    show-sql: false
+    generate-ddl: true
+    open-in-view: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      "[hibernate.id.new_generator_mappings]": true
+      "[hibernate.connection.provider_disables_autocommit]": true
+      "[hibernate.generate_statistics]": false
+  jackson:
+    serialization:
+      indent-output: true
+    date-format: yyyy/MM/dd HH:mm:ss
+    time-zone: GMT+8
+  datasource:
+    url: jdbc:mysql://localhost:3306/jpa?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password: root
+    hikari:
+      poolName: Hikari
+      auto-commit: false
+  cloud:
+    nacos:
+      discovery:
+        # 指定nacos server地址
+        server-addr: localhost:8848
+    compatibility-verifier:
+      compatible-boot-versions:
+      enabled: false
+#    sentinel:
+#      transport:
+#        dashboard: localhost:8080
+  application:
+    name: jpa
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'

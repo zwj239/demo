@@ -1,2 +1,15 @@
-# demo
-个人练手项目
+由SpringBoot+SpringClound+SpringCloundAlibaba搭建的微服务项目：
+  Nacos服务注册、服务发现；
+  Ribbon负载均衡；
+  Sentinel限流；
+  以上组件基于Gateway实现。
+------------
+jpa子项目：
+  基于SpringSecurity+jwt进行登录权限认证。
+  基于SpringBoot+SpringMVC+JPA+Mysql提供接口测试。
+------------
+consumer子项目：
+  基于RestTemplate对Gateway映射的jpa子项目进行访问测试。
+------------
+gateway子项目：
+  配置Ribbon、Sentinel相关信息。
